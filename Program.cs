@@ -10,7 +10,6 @@ namespace PizzaMaker
             Menu menu = new();
             menu.ReadMenu();
             Order pizza = new();
-            pizza.ReadOrders();
             string action = "";
             while(action != "0")
             {
@@ -56,6 +55,7 @@ namespace PizzaMaker
                     break;
                     case "2":
                     index = 1;
+                    pizza.ReadOrders();
                     pizza.Orders.ForEach(order =>
                     {
                         Console.WriteLine($"{index.ToString()}-Order name:{order.Name} is a {order.Size.Name} size {order.Pizza.Name} pizza with {order.Topping[0].Name}");
